@@ -28,17 +28,17 @@ README.md
 ```
 
 Notable directories:
-- [Block](app/code/LFuser/CategoryContentManagement/Block/): Admin blocks for rendering buttons on the category edit page (copy, mass assign, truncate).
-- [Controller](app/code/LFuser/CategoryContentManagement/Controller/): Admin controllers handling copy, mass assign, and truncate actions.
-- [Service](app/code/LFuser/CategoryContentManagement/Service/): Application services for attribute copy and product linking logic.
-- [Plugin](app/code/LFuser/CategoryContentManagement/Plugin/): Admin UI plugin to inject extra buttons into the category product assignment UI.
-- [Ui](app/code/LFuser/CategoryContentManagement/Ui/): UI data providers for admin modals/forms.
-- [view](app/code/LFuser/CategoryContentManagement/view/): Adminhtml layouts, templates, JS, and LESS for the UI.
-- [etc](app/code/LFuser/CategoryContentManagement/etc/): Module declaration and admin wiring (routes, DI, ACL via Magento catalog permissions).
+- [Block](Block/): Admin blocks for rendering buttons on the category edit page (copy, mass assign, truncate).
+- [Controller](Controller/): Admin controllers handling copy, mass assign, and truncate actions.
+- [Service](Service/): Application services for attribute copy and product linking logic.
+- [Plugin](Plugin/): Admin UI plugin to inject extra buttons into the category product assignment UI.
+- [Ui](Ui/): UI data providers for admin modals/forms.
+- [view](view/): Adminhtml layouts, templates, JS, and LESS for the UI.
+- [etc](etc/): Module declaration and admin wiring (routes, DI, ACL via Magento catalog permissions).
 
 Root files:
-- [composer.json](app/code/LFuser/CategoryContentManagement/composer.json): Module metadata and autoloading.
-- [registration.php](app/code/LFuser/CategoryContentManagement/registration.php): Module registration.
+- [composer.json](composer.json): Module metadata and autoloading.
+- [registration.php](registration.php): Module registration.
 
 ### Istruction
 - Place the module under `app/code/LFuser/CategoryContentManagement` (or install via Composer if published).
@@ -65,7 +65,7 @@ All features are available in the Admin at Catalog > Categories, on the category
 
 - Copy category attributes
   - Opens a modal to choose source and target categories and which attributes to copy.
-  - Runs via an admin controller that uses services under [Service](app/code/LFuser/CategoryContentManagement/Service/).
+  - Runs via an admin controller that uses services under [Service](Service/).
 
 - Mass‑assign products by SKU
   - Paste one SKU per line into the provided field; choose sorting mode (e.g., append/after).
