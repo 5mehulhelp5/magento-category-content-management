@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">category_attribute_copy_modal.category_attribute_copy_modal_data_source</item>
+        </item>
+        <item name="label" xsi:type="string">Copy Category Attribute</item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+    </argument>
+    <settings>
+        <namespace>category_attribute_copy_modal</namespace>
+        <dataScope>data</dataScope>
+        <deps>
+            <dep>category_attribute_copy_modal.category_attribute_copy_modal_data_source</dep>
+        </deps>
+    </settings>
+    <dataSource name="category_attribute_copy_modal_data_source">
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+        <dataProvider class="LFuser\CategoryContentManagement\Ui\DataProvider\CopyForm\DataProvider" name="category_attribute_copy_modal_data_source">
+            <settings>
+                <requestFieldName>id</requestFieldName>
+                <primaryFieldName>entity_id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <fieldset name="copy_fieldset" sortOrder="10">
+        <settings>
+            <label>Copy Settings</label>
+            <collapsible>false</collapsible>
+        </settings>
+        <field name="source_store_id" formElement="select" class="Magento\Store\Ui\Component\Form\Field\StoreView">
+            <argument name="data" xsi:type="array">
+            </argument>
+            <settings>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+                <dataType>int</dataType>
+                <tooltip>
+                    <link>https://experienceleague.adobe.com/docs/commerce-admin/start/setup/websites-stores-views.html#scope-settings</link>
+                    <description>What is this?</description>
+                </tooltip>
+                <label translate="true">Source Store ID</label>
+                <dataScope>source_store_id</dataScope>
+            </settings>
+            <formElements>
+                <select>
+                    <settings>
+                        <options class="Magento\Cms\Ui\Component\Listing\Column\Cms\Options"/>
+                    </settings>
+                </select>
+            </formElements>
+        </field>
+        <field name="target_store_id" formElement="select" class="Magento\Store\Ui\Component\Form\Field\StoreView">
+            <argument name="data" xsi:type="array">
+            </argument>
+            <settings>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+                <dataType>int</dataType>
+                <tooltip>
+                    <link>https://experienceleague.adobe.com/docs/commerce-admin/start/setup/websites-stores-views.html#scope-settings</link>
+                    <description>What is this?</description>
+                </tooltip>
+                <label translate="true">Target Store ID</label>
+                <dataScope>target_store_id</dataScope>
+            </settings>
+            <formElements>
+                <select>
+                    <settings>
+                        <options class="Magento\Cms\Ui\Component\Listing\Column\Cms\Options"/>
+                    </settings>
+                </select>
+            </formElements>
+        </field>
+        <field name="target_category_id" formElement="select" sortOrder="40">
+            <argument name="data" xsi:type="array">
+            </argument>
+            <settings>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+                <label translate="true">Target Category</label>
+                <dataType>int</dataType>
+                <dataScope>target_category_id</dataScope>
+                <required>true</required>
+            </settings>
+            <formElements>
+                <select>
+                    <settings>
+                        <options class="LFuser\CategoryContentManagement\Model\Config\Source\CategoryList"/>
+                    </settings>
+                </select>
+            </formElements>
+        </field>
+        <field name="attribute_code" formElement="input" sortOrder="50">
+            <argument name="data" xsi:type="array">
+            </argument>
+            <settings>
+                <dataType>text</dataType>
+                <dataScope>attribute_code</dataScope>
+                <visible>false</visible>
+            </settings>
+        </field>
+    </fieldset>
+</form>

@@ -1,0 +1,26 @@
+{
+  "name": "lucafuser/magento-category-content-management",
+  "description": "This module extend core category functionalities",
+  "type": "magento2-module",
+  "license": [
+    "OSL-3.0",
+    "AFL-3.0"
+  ],
+  "authors": [
+    {
+      "name": "Luca Fuser",
+      "email": "luca.a.fuser@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "~8.3.0||~8.4.0"
+  },
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "LFuser\\CategoryContentManagement\\": ""
+    }
+  }
+}
