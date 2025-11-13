@@ -41,7 +41,10 @@ Root files:
 - [registration.php](registration.php): Module registration.
 
 ### Istruction
-- Place the module under `app/code/LFuser/CategoryContentManagement` (or install via Composer if published).
+- Install via Composer
+  ```bash
+  composer require lucafuser/magento-category-content-management
+  ```
 - From the project root, enable the module:
   ```bash
   bin/magento module:enable LFuser_CategoryContentManagement
