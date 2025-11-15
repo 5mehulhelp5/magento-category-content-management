@@ -3,6 +3,9 @@
     <type name="Magento\Catalog\Block\Adminhtml\Category\AssignProducts">
         <plugin name="category_assign_product_template_empty_button" type="LFuser\CategoryContentManagement\Plugin\Catalog\Block\Adminhtml\Category\AssignProductsPlugin" />
     </type>
+    <type name="Magento\Catalog\Block\Adminhtml\Category\Tab\Product">
+        <plugin name="category_product_tab_image_to_collection" type="LFuser\CategoryContentManagement\Plugin\Catalog\Block\Adminhtml\Category\Tab\ProductPlugin" />
+    </type>
 
     <type name="LFuser\CategoryContentManagement\Plugin\Catalog\Block\Adminhtml\Category\AssignProductsPlugin">
         <arguments>
