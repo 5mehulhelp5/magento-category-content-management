@@ -4,6 +4,7 @@ This module extends Magento category management in the Admin. It adds quick acti
 - Copy selected attributes from one category to another
 - Mass‑assign products to a category by SKU list (with simple positioning mode)
 - Truncate (clear) all product assignments from a category
+- Show product thumbnails in the Category › Products grid (Assign Products tab)
 
 These tools help merchandisers manage category data faster without leaving the category screen.
 
@@ -28,10 +29,10 @@ README.md
 ```
 
 Notable directories:
-- [Block](Block/): Admin blocks for rendering buttons on the category edit page (copy, mass assign, truncate).
+- [Block](Block/): Admin blocks for rendering buttons on the category edit page (copy, mass assign, truncate) and custom grid columns (e.g., product thumbnail).
 - [Controller](Controller/): Admin controllers handling copy, mass assign, and truncate actions.
 - [Service](Service/): Application services for attribute copy and product linking logic.
-- [Plugin](Plugin/): Admin UI plugin to inject extra buttons into the category product assignment UI.
+- [Plugin](Plugin/): Admin UI plugins to inject extra buttons and columns into the category product assignment UI.
 - [Ui](Ui/): UI data providers for admin modals/forms.
 - [view](view/): Adminhtml layouts, templates, JS, and LESS for the UI.
 - [etc](etc/): Module declaration and admin wiring (routes, DI, ACL via Magento catalog permissions).
@@ -76,6 +77,11 @@ All features are available in the Admin at Catalog > Categories, on the category
 
 - Truncate products in category
   - Removes existing product assignments for the current category.
+
+- Product thumbnails in grid (new)
+  - On the Assign Products tab (Category > Products), a Thumbnail column is added.
+  - Helps merchandisers visually identify products while assigning/ordering them.
+  - Implemented via custom column block and renderer, injected through admin UI plugins.
 
 Access control: actions reuse Magento’s `Magento_Catalog::categories` permission, so users with category management rights can use the buttons.
 
