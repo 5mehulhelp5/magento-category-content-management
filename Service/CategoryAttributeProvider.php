@@ -21,6 +21,7 @@ class CategoryAttributeProvider
     {
         /** @var Collection $collection */
         $collection = $this->attributeCollectionFactory->create();
+        $collection->addFieldToFilter('is_visible', 1);
         $attributeCodes = [];
 
         /** @var Attribute $attribute */
