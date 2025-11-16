@@ -142,7 +142,7 @@ define([
                 field = '.admin__field-control';
 
             if (inputName === 'image') {
-                selector = '[name="use_default[image]"]';
+                selector = '[upload-area-id="' + inputName + '"]'
                 method = 'closest';
             }
 
