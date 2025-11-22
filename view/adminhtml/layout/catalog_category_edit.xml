@@ -5,6 +5,8 @@
             <uiComponent name="category_attribute_copy_modal"/>
             <block class="LFuser\CategoryContentManagement\Block\Adminhtml\Category\Attribute\CopyButton"
                    name="category_copy_button_js" />
+            <block class="LFuser\CategoryContentManagement\Block\Adminhtml\Category\Attribute\ScopeTooltip"
+                   name="category_scope_tooltip" />
         </referenceContainer>
     </body>
 </page>
