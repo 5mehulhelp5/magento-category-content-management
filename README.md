@@ -5,11 +5,14 @@ This module extends Magento category management in the Admin. It adds quick acti
 - Mass‑assign products to a category by SKU list (with simple positioning mode)
 - Truncate (clear) all product assignments from a category
 - Show product thumbnails in the Category › Products grid (Assign Products tab)
+- Attribute scope tooltip for category fields to preview per‑store overridden values
 
 These tools help merchandisers manage category data faster without leaving the category screen.
 
 ### Prerequisites
-- Magento Open Source/Adobe Commerce 2.4.x
+- Magento Open Source/Adobe Commerce >= 2.4.7  
+or  
+- Mage-OS >= 1.3
 - PHP 8.3 or 8.4 (per `composer.json`)
 - Admin role with access to `Catalog > Categories` (`Magento_Catalog::categories`)
 
@@ -78,10 +81,15 @@ All features are available in the Admin at Catalog > Categories, on the category
 - Truncate products in category
   - Removes existing product assignments for the current category.
 
-- Product thumbnails in grid (new)
+- Product thumbnails in grid
   - On the Assign Products tab (Category > Products), a Thumbnail column is added.
   - Helps merchandisers visually identify products while assigning/ordering them.
   - Implemented via custom column block and renderer, injected through admin UI plugins.
+
+- Attribute scope tooltip
+  - For supported category attributes (e.g., name, description, image), a clickable tooltip is added next to the field.
+  - The tooltip shows store views where the attribute is explicitly overridden, together with the rendered value per store.
+  - Helpful when auditing multi‑store content differences without switching the scope.
 
 Access control: actions reuse Magento’s `Magento_Catalog::categories` permission, so users with category management rights can use the buttons.
 
