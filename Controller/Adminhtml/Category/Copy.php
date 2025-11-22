@@ -85,7 +85,7 @@ class Copy extends Action implements HttpPostActionInterface
 
     private function validateAttribute(string $attributeCode): bool
     {
-        $attributeCodes = $this->categoryAttributeProvider->execute();
+        $attributeCodes = $this->categoryAttributeProvider->getAttributes();
         if (!in_array($attributeCode, $attributeCodes)) {
             throw new LocalizedException(__("Attribute not found"));
         }

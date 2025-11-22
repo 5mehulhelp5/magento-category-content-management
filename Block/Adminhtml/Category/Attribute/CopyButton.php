@@ -34,7 +34,7 @@ class CopyButton extends Template
 
     public function getAttributeConfig(): string
     {
-        return (string)json_encode($this->categoryAttributeProvider->execute());
+        return (string)json_encode($this->categoryAttributeProvider->getAttributes());
     }
 
 }
